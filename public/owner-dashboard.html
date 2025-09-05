@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="/firebase-config.js"></script>
+    <script defer src="/app.js"></script>
+    <script defer src="/owner.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><a href="/">🏠 Home On Rent</a></div>
+      <nav>
+        <button onclick="signOut()">Sign out</button>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="card">
+        <h2>Add a new property</h2>
+        <div class="row">
+          <div>
+            <label>Title</label>
+            <input id="title" placeholder="Spacious 2BHK near..." />
+          </div>
+          <div>
+            <label>City</label>
+            <input id="city" placeholder="Ahmedabad" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Type</label>
+            <select id="type">
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="studio">Studio</option>
+              <option value="pg">PG</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Rent (₹/month)</label>
+            <input id="rent" type="number" min="0" />
+          </div>
+        </div>
+        <div>
+          <label>Address</label>
+          <textarea id="address" rows="2" placeholder="Full address"></textarea>
+        </div>
+        <div>
+          <label>Amenities (comma separated)</label>
+          <input id="amenities" placeholder="AC, Parking, Lift" />
+        </div>
+        <div>
+          <label>Images (max 5, .jpg/.png, each ≤ 5MB)</label>
+          <input id="images" type="file" accept=".jpg,.jpeg,.png" multiple />
+          <div id="preview" class="grid" style="margin-top: 10px"></div>
+        </div>
+        <div style="margin-top: 12px">
+          <button id="submit">Add Property</button>
+        </div>
+        <p id="msg"></p>
+      </div>
+    </div>
+  </body>
+</html>
