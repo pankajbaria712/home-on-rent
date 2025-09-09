@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Home On Rent</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="/firebase-config.js"></script>
+  <script defer src="/app.js"></script>
+  <script defer src="/login.js"></script>
+</head>
+<body>
+  <main class="auth">
+    <h1>Login / Register</h1>
+    <div id="msg" class="msg"></div>
+
+    <label>Email</label>
+    <input id="email" type="email" placeholder="you@example.com" />
+
+    <label>Password</label>
+    <input id="password" type="password" placeholder="password" />
+
+    <label>Phone</label>
+    <input id="phone" type="text" placeholder="1234567890" />
+
+    <label>Role</label>
+    <select id="role">
+      <option value="tenant">Tenant</option>
+      <option value="owner">Owner</option>
+    </select>
+
+    <div style="display:flex; gap:8px; margin-top:8px;">
+      <button id="signup">Sign up</button>
+      <button id="signin">Sign in</button>
+      <button id="reset">Reset password</button>
+    </div>
+
+    <div style="margin-top:12px;">
+      <button id="google" onclick="alert('Google sign-in not implemented')">Sign in with Google</button>
+    </div>
+  </main>
+</body>
+</html>

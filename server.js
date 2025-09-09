@@ -53,6 +53,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 const userRoutes = require("./src/routes/users");
 const propertyRoutes = require("./src/routes/properties");
+
+// Firebase admin & token verify
+const verifyFirebase = require('./src/middleware/verifyFirebase');
+
 app.use("/api/users", userRoutes);
 app.use("/api/properties", propertyRoutes);
 
